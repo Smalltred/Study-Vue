@@ -10,10 +10,11 @@
 <body>
 <label for="text"></label>
 <input type="text" id="text" name="">
+<label for="text1"></label>
 <input type="text" id="text1" value="">
 <script>
 	let a = null;
-	document.querySelector('#text').addEventListener('input', ev => {
+	document.querySelector('#text').addEventListener('input', () => {
 		document.querySelector('#text1').value = document.querySelector('#text').value;
 		
 	});
