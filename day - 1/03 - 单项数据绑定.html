@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<script src="../js/vue.js"></script>
+	<title>Title</title>
+</head>
+<body>
+<div id="root">
+	<!-- 单向绑定 -->
+	
+	<h1>数据绑定</h1>
+	<!-- 普通写法 -->
+	<!-- <label for="name">单向数据绑定: -->
+	<!-- 	<input type="text" name="" id="name" v-bind:value="name" autocomplete="off"> -->
+	<!-- </label> -->
+	<!-- <label for="name1">双向数据绑定: -->
+	<!-- 	<input type="text" name="" id="name1" v-model:value="name" autocomplete="off"> -->
+	<!-- </label> -->
+	<!-- 简写 -->
+	<label for="name">单向数据绑定:
+		<input type="text" name="" id="name" :value="name" autocomplete="off">
+	</label>
+	<label for="name1">双向数据绑定:
+		<input type="text" name="" id="name1" v-model:value="name" autocomplete="off">
+	</label>
+	<!-- v-model只能在表单元素使用 -->
+	<!-- <h1 v-model:x="name"></h1> -->
+</div>
+<script>
+	new Vue({
+		el: '#root',
+		data: {
+			name: 'hecady',
+		}
+	});
+</script>
+</body>
+</html>
