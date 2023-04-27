@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<script src="../vue.js"></script>
+	<title>Title</title>
+</head>
+<body>
+<script>
+	let number = 18;
+	const person = {name: '张三', sex: '男',};
+	
+	Object.defineProperty(person, 'age', {
+		// value: 1,
+		// 让属性可以遍历 但是 属性不可修改
+		// enumerable: true,
+		// 让属性可以修改
+		// writable: true
+		// 让属性可以被删除
+		// configurable: true
+		
+		// 调用getter函数
+		// 当有人读取head值的时候，get就会调用并返回head的值
+		get() {
+			console.log('读取了age属性');
+			return number;
+		},
+		
+		set(value) {
+			console.log('有人修改了age的属性且值的', value);
+			number = value;
+		}
+		
+	}); // 不可遍历
+	
+	
+	// console.log(Object.keys(person));
+	
+	// for (const personKey in person) {
+	// 	console.log(personKey);
+	// }
+	
+	console.log(person);
+
+</script>
+</body>
+</html>

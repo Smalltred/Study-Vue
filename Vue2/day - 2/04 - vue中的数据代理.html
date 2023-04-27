@@ -9,26 +9,21 @@
 	<title>Title</title>
 </head>
 <body>
-<!-- V 视图  模版 -->
 <div id="root">
 	<h1>学校名称: {{name}}</h1>
+	<!-- <h1>学校名称: {{_data.name}}</h1> -->
 	<h1>学校地址: {{address}}</h1>
-	<h1>{{a}}</h1>
-	<h1>{{10 + 10}}</h1>
-	<h1>{{$mount}}</h1>
+	<!-- <h1>学校地址: {{_data.address}}</h1> -->
 </div>
 <script>
-	<!-- VM 视图模型 vue实例 -->
 	const vm = new Vue({
 		el: '#root',
-		// M 模型 对应data里面的数据
 		data: {
 			name: 'whcp',
 			address: 'wh',
-			a: 1
 		}
 	});
-	
+	// vm._data = options.data = data
 	console.log(vm);
 </script>
 </body>
